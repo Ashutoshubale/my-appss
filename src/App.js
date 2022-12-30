@@ -1,14 +1,17 @@
+import { useState } from "react";
+//statefull counter 
 function App () {
-//stateless variable becouse the state is not changing in UI
-  
-//data member
-let counter = 100;
+  //in counter 100 is stored and 
 
+  //  setCounter Increment the the 100 value to 101 102 and so onn
+  let [counter, setCounter] = useState(100 );
+console.log(counter);
 
-// memeber functions
-  let increment = () => {
+let increment = () => {
   counter = counter + 1;
-  console.log(counter);
+
+  //RE-RENDER
+  setCounter(counter);
 };
 
   return (
