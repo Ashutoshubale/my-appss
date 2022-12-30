@@ -1,25 +1,45 @@
 import { useState } from "react";
-//statefull counter 
+
+
+
 function App () {
-  //in counter 100 is stored and 
+let str1 = "Home";
+let str2 = "Explore";
+let str3 = "Notification";
+//let counter = 1;
 
-  //  setCounter Increment the the 100 value to 101 102 and so onn
-  let [counter, setCounter] = useState(100 );
-console.log(counter);
+let [counter,setCounter] = useState(1);
 
-let increment = () => {
-  counter = counter + 1;
-
-  //RE-RENDER
-  setCounter(counter);
+//let city = "Mumbai"
+let [city, setCity] = useState("Mumbai");
+let ChangeCity = () => {
+  city = "Hello" + city;
+  setCity(city);
 };
 
-  return (
-    <div>
-      <h1>  Counter Application </h1>
-      <h1>{counter}</h1>
-      <input type="button" value = "Increment" onClick={increment}/>
-    </div>
-  );
+let increment = () => {
+  //logical part
+counter++;
+console.log(counter);
+
+// DOM Update Part.
+setCounter(counter);
+
+};
+
+return (
+  <div>
+    <h1>{city}</h1>
+    <input type="button" value="Change City" onClick = {ChangeCity}/>
+
+    <hr/>
+    <h1>{str1}</h1>
+    <h1>{str2}</h1>
+    <h1>{str3}</h1>
+    <h1>{counter}</h1>
+    <input type = "button" value="Increment" onClick = {increment} />
+  </div>
+ );
 }
+
 export default App;
