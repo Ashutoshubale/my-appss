@@ -1,21 +1,21 @@
 function App () {
+//stateless variable becouse the state is not changing in UI
+  
+//data member
+let counter = 100;
 
-  // Data Members
-  let project = "Counter Application";
-  let btnvalue = "click me"
 
-  //Member :: Type is Functions 
-  let clickMe = () => alert("ky mug kasa kay bara ahe na ");
-  let increment = () => {};
-  let decrement = () => {};
+// memeber functions
+  let increment = () => {
+  counter = counter + 1;
+  console.log(counter);
+};
 
-  //JSX
-return (
+  return (
     <div>
-      <h1> Counter Application Static </h1>
-      <h1> {project} </h1>
-      <input type = "button" value={btnvalue} onClick = {clickMe}/>
-      <input type="button" value="Increment" onClick={increment}/>
+      <h1>  Counter Application </h1>
+      <h1>{counter}</h1>
+      <input type="button" value = "Increment" onClick={increment}/>
     </div>
   );
 }
