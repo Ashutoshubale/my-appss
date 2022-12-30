@@ -1,43 +1,29 @@
 import { useState } from "react";
 
-
-
 function App () {
-let str1 = "Home";
-let str2 = "Explore";
-let str3 = "Notification";
-//let counter = 1;
+  // useState,hooks,Statefull variabale
+  // De-Structureing
 
-let [counter,setCounter] = useState(1);
+let [counter, setCounter ] = useState(100);
 
-//let city = "Mumbai"
-let [city, setCity] = useState("Mumbai");
-let ChangeCity = () => {
-  city = "Hello" + city;
-  setCity(city);
-};
-
+//member function,
+//Arrow function
+// how calling this function 
+//react binding + using interpolation
 let increment = () => {
-  //logical part
-counter++;
-console.log(counter);
 
-// DOM Update Part.
-setCounter(counter);
+  //logic operation
+  counter++;
 
+  //dom
+  setCounter(counter);
 };
+return(
 
-return (
   <div>
-    <h1>{city}</h1>
-    <input type="button" value="Change City" onClick = {ChangeCity}/>
-
-    <hr/>
-    <h1>{str1}</h1>
-    <h1>{str2}</h1>
-    <h1>{str3}</h1>
+    <h1>Counter Application</h1>
     <h1>{counter}</h1>
-    <input type = "button" value="Increment" onClick = {increment} />
+    <input type= "button" value = "Increment" onClick = {increment}/>
   </div>
  );
 }
